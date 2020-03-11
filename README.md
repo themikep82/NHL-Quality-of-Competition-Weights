@@ -6,7 +6,7 @@ Quality of Competition is used in player modeling to account for the quality of 
 This project solves it by first retreiving substitution and line change data from the NHL Stats API, cleaning it, loading it into a postgresql database on AWS, then stepping through every single player substitution and line change for a given game in chronological order and recording the combination of skaters on the ice for each event, plus the duration that these skaters were on the ice together. For the purposes of this project, I am calling that combination of skaters + duration a "skater state".
 
 ## Tableau Demo
-Interactive Tableau Demo is available here: https://public.tableau.com/profile/mike.peterson3278#!/vizhome/QoCFrameworkDemo/KingsQoC-AveragePlusMinusofAllOpposingSkatersWeightedbyTimeonIcevsEachOpposingSkater
+Interactive Tableau Demo is available here: https://public.tableau.com/profile/mike.peterson3278#!/vizhome/QoCFrameworkDemo/20192020KingsQoC-AveragePlusMinusofAllOpposingSkatersWeightedbyTimeonIcevsEachOpposingSkater
 
 Demo uses plus/minus as the player quality metric. Obviously plus/minus is deeply flawed, but it was an easy accessible overall player statistic available on the NHL Stats API. If you have a database with better player metrics, like xGF% or some WAR-like metric keyed by NHLs 7-digit playerIds, it's a very simple join to replace plus/minus.
 
@@ -44,3 +44,5 @@ Not necessary to run this if you are just interested in the framework, but in or
 
 ## \config_queries directory
 Contains several queries to set up the required tables as well as setting primary keys, enforcing uniqueness constraints etc. Also contains shifts_table_remove_duplicate_shift_changes.sql file which is a necessary deduplication script because the NHL Stats API has some imperfect data -- identical shift change data rows keyed with unique shiftIds.
+
+Contact me at themikep@gmail.com with questions/suggestions/insults/requests
